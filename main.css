@@ -44,7 +44,7 @@ p {
 }
 
 .add {
-    background: linear-gradient(transparent, rgba(0, 0, 0, .05)) #F8F8F8;
+    /*background: linear-gradient(transparent, rgba(0, 0, 0, .05)) #F8F8F8;*/
     float: right;
     background-color: #2185D0;
     border: none;
@@ -147,7 +147,7 @@ p {
 }
 
 .products-holder {
-    padding: 8px;
+
 }
 
 .product {
