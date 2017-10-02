@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>My Page</title>
     <link rel="stylesheet" type="text/css" href="main.css"/>
+    <script src="main.js"></script>
 </head>
 <body>
 <div class="background">
@@ -12,65 +13,65 @@
             <div class="inner">
                 <div class="segment form">
                     <input class="input" type="text" placeholder="Item name" width="100%">
-                    <button class="button add">Add</button>
+                    <button data-tooltip="Add new product" class="button add">Add</button>
                 </div>
-                <div class="list">
+                <div class="list-element">
                     <div class="name-cell">
                         <div class="product-name">Tomatoes</div>
                     </div>
                     <div class="central-cell">
-                        <button class="button round minus red">
-                            <p>&#10134</p>
+                        <button data-tooltip="One more" class="button round minus red">
+                            —
                         </button>
                         <div class="count">1</div>
-                        <button class="button round plus green">
-                            <p>&#10133</p>
+                        <button data-tooltip="One less" class="button round plus green">
+                            +
                         </button>
                     </div>
                     <div class="right-cell">
-                        <button class="button bought">Bought</button>
-                        <button class="button red delete-button">
-                            <p>&#10006</p>
+                        <button data-tooltip="Add to Bought" class="button bought">Bought</button>
+                        <button data-tooltip="Remove from Buy List" class="button red delete-button">
+                            &#10006
                         </button>
                     </div>
                 </div>
-                <div class="list">
+                <div class="list-element">
                     <div class="name-cell">
-                        <div class="product-name">Cookies</div>
+                        <div class="product-name">Tomatoes</div>
                     </div>
                     <div class="central-cell">
-                        <button class="button round minus red">
-                            <p>&#10134</p>
+                        <button data-tooltip="One more" class="button round minus red">
+                            —
                         </button>
                         <div class="count">1</div>
-                        <button class="button round plus green">
-                            <p>&#10133</p>
+                        <button data-tooltip="One less" class="button round plus green">
+                            +
                         </button>
                     </div>
                     <div class="right-cell">
-                        <button class="button bought">Bought</button>
-                        <button class="button red delete-button">
-                            <p>&#10006</p>
+                        <button data-tooltip="Add to Bought" class="button bought">Bought</button>
+                        <button data-tooltip="Remove from Buy List" class="button red delete-button">
+                            &#10006
                         </button>
                     </div>
                 </div>
-                <div class="list">
+                <div class="list-element">
                     <div class="name-cell">
-                        <div class="product-name">Cheese</div>
+                        <div class="product-name">Tomatoes</div>
                     </div>
                     <div class="central-cell">
-                        <button class="button round minus red">
-                            <p>&#10134</p>
+                        <button data-tooltip="One more" class="button round minus red">
+                            —
                         </button>
                         <div class="count">1</div>
-                        <button class="button round plus green">
-                            <p>&#10133</p>
+                        <button data-tooltip="One less" class="button round plus green">
+                            +
                         </button>
                     </div>
                     <div class="right-cell">
-                        <button class="button bought">Bought</button>
-                        <button class="button red delete-button">
-                            <p>&#10006</p>
+                        <button data-tooltip="Add to Bought" class="button bought">Bought</button>
+                        <button data-tooltip="Remove from Buy List" class="button red delete-button">
+                            &#10006
                         </button>
                     </div>
                 </div>
@@ -79,7 +80,7 @@
         <div class=" right">
             <div class="inner">
                 <div class=" segment text">
-                    <h3 style="margin: 0">LEFT</h3>
+                    <h3 style="margin: 0">LEFT TO BUY</h3>
                 </div>
                 <div class="segment items-left">
                     <div class="products-holder">
@@ -101,11 +102,20 @@
                     <h3 style="margin: 0;">BOUGHT</h3>
                 </div>
                 <div class=" segment items-bought">
-
+                    <div class="product">
+                        <div class="label">Beer</div>
+                        <div class="circular">4000</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+ ̰
+<div class="badge">
+    <div class="written badge-title">Buy List</div>
+    <div class="written badge-text">Created by Nectarine</div>
+</div>
+
 </body>
 </html>

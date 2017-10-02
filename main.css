@@ -8,10 +8,9 @@ body {
 .container {
     display: block;
     max-width: 1100px;
-    min-width: 900px;
+    min-width: 500px;
     padding-top: 100px;
-    margin-right: 133px;
-    margin-left: 133px;
+    margin: auto;
 }
 
 h3 {
@@ -21,10 +20,7 @@ h3 {
 
 p {
     margin: 0;
-    color: white!important;
-    /*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);*/
-    /*text-rendering: optimizeLegibility !important;*/
-    /*-webkit-font-smoothing: antialiased !important;*/
+    color: white !important;
 }
 
 .background {
@@ -86,7 +82,6 @@ p {
     font-size: small;
 }
 
-
 .segment {
     padding: 10px;
     border-bottom: 1px solid rgba(34, 36, 38, .15);
@@ -120,7 +115,7 @@ p {
     padding: 15px;
 }
 
-.list {
+.list-element {
     border-radius: 0;
     border-top: 1px solid rgba(34, 36, 38, .15);
     box-shadow: none;
@@ -152,10 +147,7 @@ p {
 
 .product {
     display: inline-block;
-    padding: 5px;
-    padding-left: 7px;
-    padding-right: 7px;
-    /*box-shadow: 0 0 5px #a2a2a2;*/
+    padding: 5px 7px 5px 7px;
     border-radius: 3px;
     background: #eaeaea;
     font-size: small;
@@ -165,10 +157,11 @@ p {
 .circular {
     color: white;
     display: inline-block;
-    border-radius: 50%;
+    border-radius: 500rem;
     background: orange;
-    width: 15px;
-    height: 15px;
+    padding: 2px 6px;
+    /*width: 15px;*/
+    /*height: 15px;*/
     text-align: center;
 }
 
@@ -205,7 +198,9 @@ p {
 }
 
 .bought {
-    background-color: #d0d0d0;
+    background: linear-gradient(
+            transparent, rgba(0, 0, 0, .05)
+    ) #ededed;
     border: none;
 
     color: #5c5c5c;
@@ -216,9 +211,7 @@ p {
     margin-right: 3px;
 
     border-radius: 3px;
-    padding: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 20px 10px 20px;
 }
 
 .bought:hover {
@@ -241,12 +234,10 @@ p {
     margin-left: 3px;
 
     border-radius: 3px;
-    padding: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 10px 15px 10px 15px;
 }
 
-.delete-button:hover{
+.delete-button:hover {
     background: #af0000;
 }
 
@@ -266,6 +257,10 @@ p {
 
 .plus {
     background-color: #009c00;
+    color: white;
+    font-weight: 900;
+    font-size: 15px;
+    text-align: center;
 }
 
 .plus:hover {
@@ -276,10 +271,11 @@ p {
     background-color: #006300;
 }
 
-.minus {
+.button.minus {
     background-color: red;
     color: white;
-
+    font-weight: 900;
+    font-size: 12px;
 }
 
 .minus:hover {
@@ -291,9 +287,7 @@ p {
 }
 
 .count {
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 5px 10px 5px 10px;
     display: inline;
     color: black;
     font-size: small;
@@ -303,10 +297,139 @@ p {
     vertical-align: baseline;
     margin: 0 .14285714em;
     background-color: #E8E8E8;
-    background-image: none;
-    color: rgba(0,0,0,.6);
+    color: rgba(0, 0, 0, .6);
     text-transform: none;
     font-weight: 700;
     border: 0 solid transparent;
     border-radius: 3px;
+}
+
+@media (max-width: 700px) {
+    .left {
+        width: 100%;
+    }
+
+    .right {
+        width: 100%;
+    }
+}
+
+@media print {
+
+    .badge {
+        background: white;
+        border: 1px solid black;
+        transform: translateY(-30px);
+    }
+
+    .badge-title {
+        display: none;
+    }
+
+    .badge-text {
+        color: black;
+        transform: translateY(-15px);
+    }
+
+}
+
+.badge {
+    width: 120px;
+    height: 130px;
+
+    position: fixed;
+    bottom: -90px;
+    left: 20px;
+
+    background: #cd10ff;
+
+    color: white;
+    font-size: 25px;
+    text-align: center;
+
+    padding: 5px;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    transition: all 1.6s ease;
+}
+
+.badge-text {
+    font-size: 14px;
+    padding: 30px;
+}
+
+.badge:hover {
+    transform: translateY(-90px) translateX(20px) rotate(360deg);
+    background: white;
+    color: #cd10ff;
+}
+
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]:before,
+[data-tooltip]:after {
+    visibility: hidden;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    pointer-events: none;
+}
+
+[data-tooltip]:before {
+    opacity: 0;
+
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    margin-bottom: 5px;
+    margin-left: -80px;
+    padding: 7px;
+    width: 160px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #000;
+    background-color: hsla(0, 0%, 20%, 0.9);
+    color: #fff;
+    content: attr(data-tooltip);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+[data-tooltip]:after {
+    opacity: 0;
+
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    border-top: 5px solid #000;
+    border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+    visibility: visible;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    -webkit-animation: fadein 2;
+    opacity: 1;
 }
