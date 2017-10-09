@@ -80,6 +80,7 @@ p {
     text-indent: 10px;
     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size: small;
+    height: 30px;
 }
 
 .segment {
@@ -174,7 +175,7 @@ p {
     width: 25% !important;
 }
 
-.product-name {
+.name {
     display: inline-block;
     font-size: small;
     color: black;
@@ -286,7 +287,7 @@ p {
     background-color: #a80000;
 }
 
-.count {
+.quantity-count {
     padding: 5px 10px 5px 10px;
     display: inline;
     color: black;
@@ -373,7 +374,7 @@ p {
 
 [data-tooltip]:before,
 [data-tooltip]:after {
-    visibility: hidden;
+    visibility: visible;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
